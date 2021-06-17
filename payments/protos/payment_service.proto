@@ -1,0 +1,24 @@
+syntax = "proto3";
+package payments;
+
+message PaymentRequest {
+  string transaction_id = 2;
+  float amount = 1;
+}
+
+message PaymentResponse {
+  enum Status {
+    UNKNOWN = 0;
+    PENDING = 1;
+    PROGRESS = 2;
+    DONE = 3;
+    FAILED = 4;
+  }
+  string transaction_id = 2;
+  Status status = 1;
+}
+
+
+service Pay {
+  rpc pay(PaymentRequest) returns (PaymentResponse);
+}

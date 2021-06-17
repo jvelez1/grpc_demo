@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in persistence.gemspec
+gemspec
+
+gem "rake", "~> 13.0"
+gem "rspec", "~> 3.0"
+gem "rubocop", "~> 1.7"
+gem 'activerecord', '~> 6.0', '>= 6.0.3.2'
+gem 'grpc', '~> 1.31'
+gem 'mysql2', '~> 0.5'
+gem 'standalone_migrations', '~> 6.0'
+gem 'grpc-tools', '~> 1.31'
+gem 'byebug'
