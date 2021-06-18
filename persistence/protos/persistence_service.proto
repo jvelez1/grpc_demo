@@ -1,0 +1,21 @@
+syntax = "proto3";
+package persistence;
+
+
+message PersistenceTransactionRequest {
+  string transaction_id = 1;
+  float amount = 2;
+  string status = 3;
+}
+
+message PersistenceResponse {
+  enum Status {
+    OK = 0;
+    FAILED = 1;
+  }
+  Status status = 1;
+}
+  
+service Persist {
+  rpc create_transaction(PersistenceTransactionRequest) returns (PersistenceResponse);
+}

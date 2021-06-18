@@ -10,7 +10,7 @@ gem "rspec", "~> 3.0"
 gem "rubocop", "~> 1.7"
 gem 'activerecord', '~> 6.0', '>= 6.0.3.2'
 gem 'grpc', '~> 1.31'
+gem 'grpc-tools', '~> 1.38.0.pre1'
 gem 'mysql2', '~> 0.5'
 gem 'standalone_migrations', '~> 6.0'
-gem 'grpc-tools', '~> 1.31'
 gem 'byebug'
