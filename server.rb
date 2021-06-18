@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 require 'grpc'
 require './payments/lib/payments/payment_service'
-require './custom_logger/lib/custom_logger'
-require './persistence/lib/persistence.rb'
 require './persistence/lib/persistence'
+require './persistence/lib/persistence/transaction_service'
+require './custom_logger/lib/custom_logger'
 
 class Server
   DEFAULT_SERVER_INTERCEPTORS = [
@@ -12,7 +12,8 @@ class Server
   ]
 
   SERVICES = [
-    Payments::PaymentService
+    Payments::PaymentService,
+    Persistence::TransactionService
   ]
 
   def self.run_server
